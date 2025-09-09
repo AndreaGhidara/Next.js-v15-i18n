@@ -4,7 +4,6 @@ Un progetto base con **Next.js 15** e **next-intl**
 per la gestione dell’internazionalizzazione (i18n).  
 Supporta routing multilingua, traduzioni dinamiche e include esempi di gestione di **loading, error, not-found e global-error**.
 
----
 
 ## 🚀 Tech Stack
 
@@ -14,31 +13,30 @@ Supporta routing multilingua, traduzioni dinamiche e include esempi di gestione 
 - **Tailwind CSS** → styling veloce e moderno
 - **Prettier** → formattazione del codice coerente
 
----
 
 ## 📂 Struttura del progetto
 
-app/
-├─ [locale]/ # Route segment per lingua (es. /it, /en)
-│ ├─ layout.tsx # Layout locale con NextIntlClientProvider
-│ ├─ page.tsx # Homepage localizzata
-│ ├─ loading.tsx # Skeleton UI per caricamenti
-│ ├─ error.tsx # Error boundary per questa lingua
-│ └─ not-found.tsx # Pagina 404 localizzata
+```plaintext
+.
+├── app/
+│   ├── [locale]/               # Route segment dinamico per la lingua (es. /it, /en)
+│   │   ├── layout.tsx          # Layout specifico per la lingua con NextIntlClientProvider
+│   │   ├── page.tsx            # Homepage localizzata
+│   │   ├── loading.tsx         # Skeleton UI per gli stati di caricamento
+│   │   ├── error.tsx           # Error boundary per le route localizzate
+│   │   └── not-found.tsx       # Pagina 404 localizzata
+│   │
+│   ├── layout.tsx              # Root layout globale con <html> e <body>
+│   ├── global-error.tsx        # Fallback per la gestione degli errori a livello globale
+│   └── globals.css             # Stili globali per l'applicazione
 │
-├─ layout.tsx # Root layout con <html> e <body>
-├─ global-error.tsx # Gestione errori a livello globale
-└─ globals.css # Stili globali
+├── messages/
+│   ├── en.json                 # File di traduzione per l'inglese
+│   └── it.json                 # File di traduzione per l'italiano
+│
 
-messages/
-├─ en.json # Traduzioni inglese
-└─ it.json # Traduzioni italiano
+```
 
-
----
-
-
----
 
 ## 🌐 Routing multilingua
 
@@ -49,9 +47,6 @@ messages/
 - Se un utente va su un path non valido → **not-found.tsx**
 - Se avviene un errore runtime → **error.tsx** o **global-error.tsx**
 
----
-
-## ✨ Funzionalità implementate
 
 ### 🔤 Internazionalizzazione (i18n)
 - Traduzioni caricate dinamicamente da `/messages/{locale}.json`
@@ -67,7 +62,6 @@ messages/
 ### ❌ 404 personalizzato
 - **not-found.tsx** → pagina “non trovata” specifica per ogni lingua
 
----
 
 ## 🛠️ Setup
 
